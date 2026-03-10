@@ -1,0 +1,7 @@
+
+===== SECURITY REPORT =====
+
+Total Logs: 32
+Successful Logins: 10
+Failed Logins: 18
+Brute Force Attacks: 4
