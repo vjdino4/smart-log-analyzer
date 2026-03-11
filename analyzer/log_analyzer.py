@@ -1,3 +1,5 @@
+import time
+
 log_file = "C:/Users/asus/soc_project/logs/logs.txt"
 
 report_file = "C:/Users/asus/soc_project/logs/security_report.txt"
@@ -46,7 +48,73 @@ Brute Force Attacks: {brute_force_count}
 
 print(report)
 
+
+# Simulated Threat Intelligence Database
+malicious_ips = [
+    "45.23.11.90",
+    "103.45.67.89",
+    "185.22.98.10"
+]
+
 with open(report_file, "w") as file:
     file.write(report)
 
 print("Report saved to security_report.txt")
+ip_activity = {}
+
+for log in logs:
+
+    if "ip=" in log:
+
+        try:
+            ip = log.split("ip=")[1].strip()
+
+            if ip in ip_activity:
+                ip_activity[ip] += 1
+            else:
+                ip_activity[ip] = 1
+
+        except:
+            continue
+
+
+print("\nSuspicious IP Activity:\n")
+
+for ip, count in ip_activity.items():
+
+    if count > 3:
+        print("⚠ Suspicious activity detected from IP:", ip, "Events:", count)
+
+
+print("\nThreat Intelligence Check:\n")
+
+for ip in ip_activity:
+
+    if ip in malicious_ips:
+
+        print("⚠ THREAT INTELLIGENCE ALERT")
+        print("Malicious IP detected:", ip)
+
+
+
+        
+while True:
+
+    print("\nMonitoring logs for new activity...\n")
+
+    with open(log_file, "r") as file:
+        logs = file.readlines()
+
+    failed_logins = 1
+
+    for log in logs:
+
+        if "FAILED_LOGIN" in log:
+            failed_logins += 1
+
+    if failed_logins >= 1:
+
+        print("🚨 SECURITY ALERT 🚨")
+        print("Possible brute force attack detected!")
+
+    time.sleep(10)
