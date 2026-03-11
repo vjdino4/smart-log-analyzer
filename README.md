@@ -84,6 +84,17 @@ soc_project
 
 ---
 
+## Security Capabilities
+
+- Detects brute-force login attempts
+- Identifies suspicious IP activity
+- Performs threat intelligence checks
+- Generates automated security reports
+- Visualizes security events in dashboard
+- Simulates real-time SOC monitoring
+
+---
+
 ## 🚀 Future Improvements
 
 - Email alert system
