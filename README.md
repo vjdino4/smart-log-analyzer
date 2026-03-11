@@ -75,10 +75,17 @@ soc_project
 
 ---
 
+### Advanced Detection
+
+- Brute force attack detection
+- Suspicious IP activity monitoring
+- Threat intelligence lookup for malicious IPs
+- Real-time log monitoring with security alerts
+
+---
+
 ## 🚀 Future Improvements
 
-- Real-time log monitoring
-- Suspicious IP reputation lookup
 - Email alert system
 - Web-based security dashboard
 
